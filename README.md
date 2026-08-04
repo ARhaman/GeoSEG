@@ -174,10 +174,10 @@ Code in this repository is released under the [MIT License](LICENSE). The F3 Net
 
 ## Acknowledgments
 
-*[Author to complete — institutional/funding/computational-resource acknowledgments.]*
+*[The authors acknowledge the Center for Integrative Petroleum Research and College of Petroleum Engineering and Geosciences at King Fahd University of Petroleum and Minerals for research support and computational resources.]*
 
 ## Contact
 
-Abdulrahman Al-Fakih — [add contact email/affiliation]
+Abdulrahman Al-Fakih — [alfakihabdulrahman2030@gmail.com/Researcher, CIPR]
 
 Issues and pull requests welcome. If you run this protocol on a different basin, modality, or generative technique, I'd like to hear what you find.
