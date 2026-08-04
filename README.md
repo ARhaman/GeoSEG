@@ -174,7 +174,7 @@ Code in this repository is released under the [MIT License](LICENSE). The F3 Net
 
 ## Acknowledgments
 
-*[The authors acknowledge the Center for Integrative Petroleum Research and College of Petroleum Engineering and Geosciences at King Fahd University of Petroleum and Minerals for research support and computational resources.]*
+The authors acknowledge the Center for Integrative Petroleum Research and College of Petroleum Engineering and Geosciences at King Fahd University of Petroleum and Minerals for research support and computational resources.
 
 ## Contact
 
