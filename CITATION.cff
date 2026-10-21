@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this code or the benchmark protocol, please cite it as below."
+title: "GeoSEG: a step-controlled benchmark of generative augmentation for seismic facies segmentation on F3"
+authors:
+  - family-names: "Al-Fakih"
+    given-names: "Abdulrahman"
+  - family-names: "Hanafy"
+    given-names: "Sherif"
+  - family-names: "Sariah"
+    given-names: "Nabil"
+  - family-names: "Koeshidayatullah"
+    given-names: "Ardiansyah"
+  - family-names: "Kaka"
+    given-names: "SanLinn I."
+repository-code: "https://github.com/ARhaman/GeoSEG"
+license: MIT

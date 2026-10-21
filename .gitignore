@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.bak
+runs/
+data/
+*.pt
+*.npz
