@@ -1,20 +1,24 @@
-"""Paired differences between training-data arms (Section 2.5 of the paper).
+"""Paired differences between training-data arms.
 
 Reads the per-checkpoint metric tables written by scripts/11_uncertainty_quality.py
-(results/quality_test1, results/quality_test2) and writes
-  results/paired_differences.csv     mean paired difference, 95% percentile bootstrap CI
-  results/paired_percent_gains.csv   percentage gain (mean over seeds of the paired ratio minus 1)
+(<RESULTS_DIR>/expB_quality_full, expB_quality_test2) and writes
+  paired_differences.csv     mean paired difference, 95% percentile bootstrap CI
+  paired_percent_gains.csv   percentage gain (mean over seeds of the paired ratio minus 1)
 
 Pairing is by seed (same label subset and initialisation in both arms); the bootstrap
 resamples the seed-level differences 20,000 times.
 
     python analysis/paired_statistics.py
 """
+import sys
 from pathlib import Path
 import numpy as np, pandas as pd
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from geoseg import config as C
 
-R = Path(__file__).resolve().parents[1] / "results"
-Q = {t: pd.read_csv(R / f"quality_{t}" / "quality_per_checkpoint.csv") for t in ("test1", "test2")}
+R = C.RESULTS_DIR
+QDIR = {"test1": "expB_quality_full", "test2": "expB_quality_test2"}   # folders written by 11_uncertainty_quality.py
+Q = {t: pd.read_csv(R / QDIR[t] / "quality_per_checkpoint.csv") for t in ("test1", "test2")}
 B = 20000
 
 def boot_ci(d, rng):

@@ -80,7 +80,7 @@ else:
     k_worst = a.worst
 
 def uq_figure(k, name, with_error):
-    torch.manual_seed(0)   # fixed MC-Dropout masks so the numbers in the paper are reproducible
+    torch.manual_seed(0)   # fixed MC-Dropout masks so the reported numbers are reproducible
     x = X[k]; pred, epi, alea, tot = mc_maps(x); err = (pred != Y[k]).astype(float)
     print(f"{name}: section {k} | mean MI {epi.mean():.4f} | mean aleatoric {alea.mean():.4f} | mean entropy {tot.mean():.4f} | pixel acc {1-err.mean():.4f}")
     print(f"   entropy on wrong px {tot[err==1].mean():.3f} vs correct {tot[err==0].mean():.3f}; MI {epi[err==1].mean():.4f} vs {epi[err==0].mean():.4f}")

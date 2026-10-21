@@ -16,7 +16,7 @@ Cost: dominated by T x n_patches forward passes per checkpoint. Entropy is
 computed on the GPU with running sums, so no (T,C,H,W) tensors are stored.
 Time one checkpoint first (--budgets 50 --arms none --seeds 0) and scale by 36.
 
-Caveats to carry into the paper:
+Caveats:
   * Seeds change both initialisation AND the sampled label subset, so ensemble
     disagreement mixes the two sources of variance.
   * Dropout sits in only 5 deep blocks (p=0.2); MC-Dropout is known to

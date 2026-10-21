@@ -1,10 +1,9 @@
 """Evaluation metrics.
 
-Beyond mIoU (which the paper treats a necessary but
-boundary-blind baseline) we compute:
+Beyond mIoU (necessary but boundary-blind) we compute:
   * per-class IoU and Dice
   * Boundary F1 at a tolerance of `tol` pixels -- catches the errors mIoU hides
-  * Expected Calibration Error + reliability curve -- for Figure 9
+  * Expected Calibration Error + reliability curve -- for reliability plots
 """
 from __future__ import annotations
 
@@ -86,7 +85,7 @@ def boundary_f1(pred, true, tol=2):
 # --------------------------------------------------------------------------
 def calibration(probs, true, n_bins=C.CALIBRATION_BINS):
     """probs: (N, C) softmax; true: (N,) int.
-    Returns ECE plus the reliability curve for Figure 9."""
+    Returns ECE plus the reliability curve for reliability plots."""
     conf = probs.max(1)
     pred = probs.argmax(1)
     correct = (pred == true).astype(np.float64)
